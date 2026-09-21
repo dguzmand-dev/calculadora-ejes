@@ -8,7 +8,7 @@ st.set_page_config(
     layout="wide",
 )
 
-st.title("⚙️ Análisis Estático y de Fatiga")
+st.title("Análisis Estático y de Fatiga")
 st.markdown(
     "Basado en las teorías de falla estática (Tresca/von Mises) y carga fluctuante (Goodman/Gerber/Soderberg)."
 )
@@ -37,6 +37,12 @@ Sy = st.sidebar.number_input("Esfuerzo Fluencia Sy (MPa)", value=550.0)
 Kf = st.sidebar.number_input("Kf (Flexión)", value=1.6)
 Kfs = st.sidebar.number_input("Kfs (Torsión)", value=1.4)
 n_objetivo = st.sidebar.number_input("Factor de Seguridad Objetivo (n)", value=2.0)
+
+st.sidebar.header("5. Factores de Marin")
+Cc = st.sidebar.number_input("Carga (Cc)", value=1.0)
+Cd = st.sidebar.number_input("Temperatura (Cd)", value=1.0)
+Ce = st.sidebar.number_input("Confiabilidad (Ce)", value=0.814)
+Cf = st.sidebar.number_input("Efectos varios (Cf)", value=1.0)
 
 # --- CÁLCULO ESTÁTICO DE REACCIONES Y DIAGRAMAS ---
 dist_apoyos = pos_a2 - pos_a1
