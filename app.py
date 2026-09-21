@@ -104,7 +104,7 @@ def evaluar_diametro(d_test, M_max_Nmm):
     Ca = min(1.0, 4.51 * (Sut ** -0.265))
     
     # Límite corregido
-    Se = Ca * Cb * 1.0 * 1.0 * 0.814 * 1.0 * Se_prime # Cc=1, Cd=1, Ce(99%)=0.814, Cf=1
+    Se = Ca * Cb * Cc * Cd * Ce * Cf * Se_prime # Cc=1, Cd=1, Ce(99%)=0.814, Cf=1
 
     # 2. Esfuerzos Equivalentes (considerando carga fluctuante)
     pi = np.pi
